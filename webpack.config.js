@@ -8,25 +8,28 @@ module.exports = {
         filename: 'build.js'
     },
     module: {
-        loaders: [
-            {
-                test:/\.vue$/,
-                loader:'vue'
-            },
+        loaders: [{
+            test: /\.vue$/,
+            loader: 'vue-loader'
+        },
             {
                 test: /\.js$/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 exclude: /node_modules/
             }
         ]
     },
-    babel: {
-        "presets": ["es2015"],
-        "plugins": ["transform-runtime"]
-    },
     plugins: [
         new webpack.ExternalsPlugin('commonjs', [
             'electron'
-        ])
+        ]),
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                babel: {
+                    "presets": ["es2015"],
+                    "plugins": ["transform-runtime"]
+                },
+            }
+        })
     ]
 }

@@ -47,7 +47,7 @@
 
     export default {
 
-        data () {
+        data() {
             return {
                 selectedCategory: ''
             }
@@ -62,19 +62,19 @@
 
         methods: {
 
-            addBookmark () {
+            addBookmark() {
                 this.$broadcast('add-bookmark')
             },
 
-            addCategory () {
+            addCategory() {
                 this.$broadcast('add-category')
             },
 
-            deleteCategory (category) {
+            deleteCategory(category) {
                 store.deleteCategory(category)
             },
 
-            categorySelected (category) {
+            categorySelected(category) {
                 this.selectedCategory = category
                 this.$dispatch('category-selected', category)
             }

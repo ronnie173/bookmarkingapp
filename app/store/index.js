@@ -1,5 +1,5 @@
 import {EventEmitter} from 'events'
-import FireBase from 'firebase'
+import {Firebase} from 'firebase';
 
 // ENTER YOUR FIREBASE URL BELOW
 const db = new Firebase("https://bookmarkmaker-6e45e.firebaseio.com")
